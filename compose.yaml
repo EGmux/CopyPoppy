@@ -1,0 +1,12 @@
+services:
+  copy:
+    build: .
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XAUTHORITY}:${HOME}/.Xauthority:wo
+    restart: on-failure
+    command: java -jar ./target/copypoppy-1.0-SNAPSHOT-jar-with-dependencies.jar
+    environment:
+      - DISPLAY=${DISPLAY}
+    network_mode: "host"
