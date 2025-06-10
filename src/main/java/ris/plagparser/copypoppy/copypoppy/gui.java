@@ -39,7 +39,7 @@ public class gui extends JPanel {
 
     //Declare Local Database
     File db = new File(Paths.get("database/csc").toAbsolutePath().toString());
-    File[] dbList = new File(Paths.get("database/csc").toAbsolutePath().toString()).listFiles();
+    File[] dbList = db.listFiles();
     int dbSize = dbList.length;
     filestruct[] database = new filestruct[dbSize];
 
